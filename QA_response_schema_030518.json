@@ -1,0 +1,560 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"description": "QA API Response Schema",
+	"$id": "http://example.com/example.json",
+	"additionalProperties": false,
+	"properties": 
+	{
+		"VerificationResponse": 
+		{
+			"type": "object",
+			"additionalProperties": false,
+			"properties": 
+			{
+				"vendor": 
+				{
+					"type": "string"
+				},
+				"submissionId": 
+				{
+					"type": "string"
+				},
+				"reports": 
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"properties": 
+					{
+						"report": 
+						{
+							"type": "array",
+							"items": 
+							{
+								"type": "object",
+								"additionalProperties": false,
+								"properties": 
+								{
+									"reportID": 
+									{
+										"type": "string"
+									},
+									"vendor": 
+									{
+										"type": "string"
+									},
+									"firstName": 
+									{
+										"type": "string"
+									},
+									"middleName": 
+									{
+										"type": "string"
+									},
+									"lastName": 
+									{
+										"type": "string"
+									},
+									"instApplId": 
+									{
+										"type": "string"
+									},
+									"SSN": 
+									{
+										"type": "string"
+									}
+								}
+							}
+						}
+					}
+				},
+				"numBorrowers": 
+				{
+					"type": "string"
+				},
+				"attributedNetIncome": 
+				{
+					"type": "number"
+				},
+				"attributedGrossIncome": 
+				{
+					"type": "number"
+				},
+				"borrowerReportedIncome": 
+				{
+					"type": "number"
+				},
+				"applicants": 
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"properties": 
+					{
+						"applicant": 
+						{
+							"type": "array",
+							"items": 
+							{
+								"type": "object",
+								"additionalProperties": false,
+								"properties": 
+								{
+									"firstName": 
+									{
+										"type": "string"
+									},
+									"middleName": 
+									{
+										"type": "string"
+									},
+									"lastName": 
+									{
+										"type": "string"
+									},
+									"instApplId": 
+									{
+										"type": "string"
+									},
+									"SSN": 
+									{
+										"type": "string"
+									},
+									"wageIncomes": 
+									{
+										"type": "object",
+										"additionalProperties": false,
+										"properties": 
+										{
+											"wageIncome": 
+											{
+												"type": "array",
+												"items": 
+												{
+													"type": "object",
+													"additionalProperties": false,
+													"properties": 
+													{
+														"incomeId": 
+														{
+															"type": "string"
+														},
+														"employerName": 
+														{
+															"type": "string"
+														},
+														"isSelfEmp": 
+														{
+															"type": "boolean"
+														},
+														"reportedBaseMonthlyIncome": 
+														{
+															"type": "number"
+														},
+														"reportedBonusMonthlyIncome": 
+														{
+															"type": "number"
+														},
+														"reportedOvertimeMonthlyIncome": 
+														{
+															"type": "number"
+														},
+														"reportedCommissionMonthlyIncome": 
+														{
+															"type": "number"
+														},
+														"attributedNetMonthlyIncome": 
+														{
+															"type": "number"
+														},
+														"attributedGrossMonthlyIncome": 
+														{
+															"type": "number"
+														}
+													}
+												}
+											}
+										}
+									},
+									"nonWageIncomes": 
+									{
+										"type": "object",
+										"additionalProperties": false,
+										"properties": 
+										{
+											"nonWageIncome": 
+											{
+												"type": "array",
+												"items": 
+												{
+													"type": "object",
+													"additionalProperties": false,
+													"properties": 
+													{
+														"incomeId": 
+														{
+															"type": "string"
+														},
+														"incomeType": 
+														{
+															"type": "string",
+															"enum": 
+															[
+																"41",
+																"42",
+																"M4",
+																"F1",
+																"07",
+																"F2",
+																"F3",
+																"02",
+																"04",
+																"03",
+																"F4",
+																"F5",
+																"F6",
+																"F7",
+																"F8",
+																"30",
+																"F9",
+																"AU",
+																"M1",
+																"M2",
+																"M3",
+																"NB",
+																"45",
+																"17",
+																"SI",
+																"S8",
+																"33",
+																"BI",
+																"MC",
+																"CG",
+																"EA",
+																"FI",
+																"RP",
+																"SE",
+																"TL",
+																"TI"
+															]
+														},
+														"reportedMonthlyIncome": 
+														{
+															"type": "number"
+														},
+														"attributedNetMonthlyIncome": 
+														{
+															"type": "number"
+														},
+														"attributedGrossMonthlyIncome": 
+														{
+															"type": "number"
+														}
+													}
+												}
+											}
+										}
+									},
+									"married": 
+									{
+										"type": "boolean"
+									},
+									"residencyState": 
+									{
+										"type": "string"
+									}
+								}
+							}
+						}
+					}
+				},
+				"questions": 
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"properties": 
+					{
+						"question": 
+						{
+							"type": "array",
+							"items": 
+							{
+								"type": "object",
+								"additionalProperties": false,
+								"properties": 
+								{
+									"questionId": 
+									{
+										"type": "string"
+									},
+									"category": 
+									{
+										"type": "string",
+										"enum": 
+										[
+											"applicant",
+											"income_wage",
+											"income_nonwage",
+											"stream"
+										]
+									},
+									"streamId": 
+									{
+										"type": "string"
+									},
+									"incomeId": 
+									{
+										"type": "string"
+									},
+									"instApplId": 
+									{
+										"type": "string"
+									},
+									"questionText": 
+									{
+										"type": "string"
+									},
+									"options": 
+									{
+										"type": "array",
+										"items": 
+										{
+											"type": "object",
+											"additionalProperties": false,
+											"properties": 
+											{
+												"text": 
+												{
+													"type": "string"
+												},
+												"value": 
+												{
+													"type": "string"
+												}
+											}
+										}
+									},
+									"answer": 
+									{
+										"type": "string"
+									}
+								}
+							}
+						}
+					}
+				},
+				"streams": 
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"properties": 
+					{
+						"stream": 
+						{
+							"type": "array",
+							"items": 
+							{
+								"type": "object",
+								"additionalProperties": false,
+								"properties": 
+								{
+									"streamId": 
+									{
+										"type": "string"
+									},
+									"incomeId": 
+									{
+										"type": "string"
+									},
+									"incomeType": 
+									{
+										"type": "string"
+									},
+									"instApplId": 
+									{
+										"type": "string"
+									},
+									"accountKey": 
+									{
+										"type": "string"
+									},
+									"matchedApplName": 
+									{
+										"type": "string"
+									},
+									"minReq": 
+									{
+										"type": "string"
+									},
+									"missingLast": 
+									{
+										"type": "boolean"
+									},
+									"offDates": 
+									{
+										"type": "string"
+									},
+									"payFreq": 
+									{
+										"type": "string"
+									},
+									"regDeps": 
+									{
+										"type": "string"
+									},
+									"totDeps": 
+									{
+										"type": "string"
+									},
+									"unableToCalculate": 
+									{
+										"type": "boolean"
+									},
+									"omit": 
+									{
+										"type": "boolean"
+									},
+									"attributedNetMonthlyIncome": 
+									{
+										"type": "number"
+									},
+									"attributedGrossMonthlyIncome": 
+									{
+										"type": "number"
+									},
+									"empName": 
+									{
+										"type": "string"
+									},
+									"description": 
+									{
+										"type": "string"
+									},
+									"deposits": 
+									{
+										"type": "array",
+										"items": 
+										{
+											"type": "object",
+											"additionalProperties": false,
+											"properties": 
+											{
+												"amount": 
+												{
+													"type": "string"
+												},
+
+												"date": 
+												{
+													"type": "string"
+												},
+
+												"offDate": 
+												{
+													"type": "boolean"
+												},
+												"rawMemo": 
+												{
+													"type": "string"
+												},
+												"seq": 
+												{
+													"type": "string"
+												},
+												"transactionId": 
+												{
+													"type": "string"
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+
+				"messages": 
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"properties": 
+					{
+						"message": 
+						{
+							"type": "array",
+							"items": 
+							{
+								"type": "object",
+								"additionalProperties": false,
+								"properties": 
+								{
+									"msgId": 
+									{
+										"type": "string"
+									},
+									"msgCategory": 
+									{
+										"type": "string",
+										"enum": 
+										[
+											"applicant",
+											"income",
+											"stream"
+										]
+									},
+									"streamId": 
+									{
+										"type": "string"
+									},
+									"incomeId": 
+									{
+										"type": "string"
+									},
+									"instApplId": 
+									{
+										"type": "string"
+									},
+									"msgText": 
+									{
+										"type": "string"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"Identity": 
+		{
+			"type": "string"
+		},
+		"ReportID": 
+		{
+			"type": "string"
+		},
+		"Product": 
+		{
+			"type": "string"
+		},
+		"TrackingKey": 
+		{
+			"type": "string"
+		},
+		"ServiceProviderCode": 
+		{
+			"type": "string"
+		},
+		"OriginalTransactionDate": 
+		{
+			"type": "string"
+		},
+		"Status": 
+		{
+			"type": "integer"
+		},
+		"Message": 
+		{
+			"type": "string"
+		}
+	}
+}
